@@ -1,0 +1,78 @@
+.logo{
+  width: 70%;
+}  
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 6px;
+    
+}
+ul li a{
+    margin: 0 5px; 
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+ul li a:hover{
+    color:rgb(215,62,77) ;
+}
+#home{
+  color:rgb(215,62,77) ;
+}
+header{
+  height: 100vh;
+  background-image: url(https://preview.colorlib.com/theme/bizpro/images/home/slide-1.jpg.webp);
+  padding: 13px 0;
+  width: 100%;
+}
+.bizpro{
+    align-items: center;
+    height: 90vh;
+    display:flex ;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.btn1{
+  background-color: transparent;
+  /* bu buttonun seffaf reng olmasi ucundur */
+  border: 1px solid red;
+  color: white;
+  padding: 8px 17px;
+  margin-top: 10px;
+}
+.btn1:hover{
+  background-color: red;
+  transition: 0.3s;
+}
+.about-our-bizpro p{
+  width: 65%;
+  text-align: center;
+  margin: 0 auto;
+}
+#lorem{
+  margin-top: 5rem;
+  height: 100vh;
+}
+.main-div{
+  border: 1px solid red;
+}
+.circle{
+  border: 1px solid red;
+  width: 50%;
+  height: 20vh;
+}
+.last-div{
+  background-color: black;
+  color: white;
+  height: 40vh;
+  
+}
+.logo2{
+  width: 20%;
+}
+.umumi{
+  margin-top: 5%;
+}
