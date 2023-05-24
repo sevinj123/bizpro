@@ -1,0 +1,136 @@
+.logo{
+    width: 70%;
+  }  
+  ul li{
+      list-style: none;
+      display: inline-block;
+      margin: 0 6px;
+      
+  }
+  ul li a{
+      margin: 0 5px; 
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+  }
+  ul li a:hover{
+      color:rgb(215,62,77) ;
+  }
+  #home{
+    color:rgb(215,62,77) ;
+  }
+  header{
+    height: 100vh;
+    background-image: url(https://preview.colorlib.com/theme/bizpro/images/home/slide-1.jpg.webp);
+    padding: 13px 0;
+    width: 100%;
+  }
+  nav{
+    overflow: hidden;
+    position: fixed;
+    z-index: 99;
+    background-color: #2e2b2b;
+    width: 100%;
+    top: 0;
+    padding: 12px;
+  }
+  .bizpro{
+      align-items: center;
+      height: 90vh;
+      display:flex ;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+  }
+  .btn1{
+    background-color: transparent;
+    /* bu buttonun seffaf reng olmasi ucundur */
+    border: 1px solid red;
+    color: white;
+    padding: 8px 17px;
+    margin-top: 10px;
+  }
+  .btn1:hover{
+    background-color: red;
+    transition: 0.3s;
+  }
+  .about-our-bizpro p{
+    width: 65%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #lorem{
+    margin-top: 5rem;
+    height: 86vh;
+  }
+  .main-div{
+    border: 0 solid red;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+  .circle{
+    border: 1px solid red;
+    width: 45%;
+    height: 15vh;
+    border-radius: 50%;
+    margin: auto;
+  }
+  .circle:hover{
+    background-color: red;
+    color: white;
+    transition: 0.3s;
+  }
+  .pen{
+    font-size: 50px;
+    margin: 35px auto;
+    color: black;
+  }
+  .pen:hover{
+    color: white;
+  }
+  .btn2{
+    background-color: transparent;
+    color: black;
+    padding: 8px;
+    border: 1px solid red;
+  }
+  .btn2:hover{
+    background-color: red;
+    color: white;
+  }
+  #cards{
+    height: 86vh;
+  }
+.meet-our-team p{
+    width: 74%;
+    text-align: center;
+    margin: 3% auto;
+    font-size: 18px;
+    color: rgb(133, 132, 132);
+}
+#latest-blog{
+ height: 95vh;
+ margin-bottom: 3%;
+}
+.our-lastes-blog p{
+    width: 75%;
+    color: rgb(133, 132, 132);
+    text-align: center;
+    margin: 3% auto;
+    font-size: 18px;
+}
+.logo2{
+    width: 20%;
+  }
+  .umumi{
+    margin-top: 5%;
+  }
+  .last-div{
+    background-color: black;
+    color: white;
+    height: 40vh;
+  }

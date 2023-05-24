@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <a href="input.html" class="btn btn-success">Creat new api</a>
+        <table class="table table-success table-spried">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>fullname</th>
+                    <th>avatar</th>
+                    <th>job</th>
+                    <th colspan="2">action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        function lastElement() {
+            fetch('https://646da3f29c677e23218a2cfb.mockapi.io/bizpro')
+                .then(res => res.json())
+                .then(data => {
+                    const tbody = document.querySelector('tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(el => {
+                        tbody.innerHTML += `  
+                    <tr>
+                <td>${el.id}</td>    
+                <td>${el.fullname}</td>
+                <td><img src="${el.avatar}" width="50"></td>
+                <td>${el.job}</td>
+                <td><a href=""><button class="btn btn-success">Edit</button></a></td>
+                <td><button class="btn btn-danger">Delete</button></td>
+                   </tr>
+                   `
+                    })
+                })
+                .catch(err => console.log(err));
+        }
+        lastElement();
+        document.addEventListener('click', function (e) {
+            const deleteBtn = e.target.closest('.btn-danger')
+            if (deleteBtn) {
+                // console.log('silindi');  //burda yoxladimki delete btn isleyir ya yox? isledise sweetalertden
+                // are you sure olan hisseni gotur at bura ondan evvel harani sileceyini teyin et
+                const fullname = deleteBtn.parentElement.parentElement.children[1].innerText
+                Swal.fire({
+                    title: 'fullname',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch('https://646da3f29c677e23218a2cfb.mockapi.io/bizpro/' + deleteBtn.parentElement.parentElement.children[0].innerText,
+                         {
+                            method: 'DELETE'
+                        })
+                            .then(res => {
+                                if (res.ok) {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your file has been deleted.',
+                                        'success'
+                                    )
+                                    lastElement();
+                                }
+                                else {
+                                    Swal.fire(
+                                        'Didnt deleted!',
+                                        'Your file has been not deleted.',
+                                        'danger'
+                                    )
+                                }
+                            })
+                            .catch(() => Swal.fire(
+                                'Didnt deleted!',
+                                'Your file has been not deleted.',
+                                'danger'
+                            ))
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>
